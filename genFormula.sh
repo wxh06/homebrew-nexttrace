@@ -1,6 +1,6 @@
 # !/bin/bash
-version="$(curl -sL https://api.github.com/repos/sjlleo/nexttrace-core/releases/latest | jq ".name")"
-url="https://github.com/xgadget-lab/nexttrace/archive/refs/tags/${version:1:$((${#version} - 1 - 1))}.tar.gz"
+version="$(curl -sL https://api.github.com/repos/nxtrace/Ntrace-core/releases/latest | jq ".name")"
+url="https://github.com/nxtrace/Ntrace-core/archive/refs/tags/${version:1:$((${#version} - 1 - 1))}.tar.gz"
 sha256="$(curl -sL ${url} | sha256sum | cut -f1 -d' ')"
 cat >Formula/nexttrace.rb <<EOF
 class Nexttrace < Formula
